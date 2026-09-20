@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retro Snake - Arcade Edition</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="cabinet">
+    <!-- CRT Scanline Overlay -->
+    <div class="crt-overlay"></div>
+
+    <!-- Arcade Header & HUD -->
+    <header class="game-header">
+      <div class="logo">RETRO SNAKE</div>
+      <div class="hud">
+        <div class="hud-item">
+          <span class="hud-label">SCORE</span>
+          <span id="scoreDisplay" class="hud-val">0000</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-label">HIGH</span>
+          <span id="highScoreDisplay" class="hud-val">0000</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-label">SPEED</span>
+          <span id="speedDisplay" class="hud-val">LVL 1</span>
+        </div>
+        <div class="hud-actions">
+          <button id="soundToggleBtn" class="arcade-btn-icon" title="Toggle Sound" aria-label="Toggle Sound">🔊</button>
+          <button id="pauseBtn" class="arcade-btn-icon" title="Pause Game" aria-label="Pause Game">⏸</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Canvas Frame -->
+    <main class="canvas-wrapper">
+      <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+      <!-- Overlay Modals -->
+      <div id="overlayScreen" class="overlay">
+        <div class="overlay-card">
+          <h1 id="overlayTitle" class="glow-title">RETRO SNAKE</h1>
+          <p id="overlaySubtitle" class="overlay-text">PRESS START OR ANY KEY</p>
+          <div id="overlayStats" class="overlay-stats hidden">
+            <p>Final Score: <span id="finalScore" class="accent-text">0</span></p>
+            <p id="newHighScoreAlert" class="high-score-alert hidden">★ NEW HIGH SCORE! ★</p>
+          </div>
+          <button id="startBtn" class="arcade-btn glow-btn">START GAME</button>
+          <div class="hint-text">
+            <span>[▲ ▼ ◄ ►] or [W A S D] to Move</span>
+            <span>[SPACE] to Pause &bull; [R] to Restart</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- On-screen Virtual Controls (Touch & Click) -->
+    <footer class="controls-container">
+      <div class="dpad">
+        <button id="btnUp" class="dpad-btn up" aria-label="Up">▲</button>
+        <div class="dpad-middle">
+          <button id="btnLeft" class="dpad-btn left" aria-label="Left">◄</button>
+          <button id="btnAction" class="dpad-btn center" aria-label="Action">●</button>
+          <button id="btnRight" class="dpad-btn right" aria-label="Right">►</button>
+        </div>
+        <button id="btnDown" class="dpad-btn down" aria-label="Down">▼</button>
+      </div>
+    </footer>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
